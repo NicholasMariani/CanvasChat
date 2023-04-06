@@ -1,0 +1,124 @@
+main,
+footer {
+  opacity: 1;
+}
+
+#chatBoard {
+  height: 85vh;
+  overflow-y: auto;
+  text-align: left;
+}
+
+input#msg:focus {
+  outline: none !important;
+  box-shadow: none;
+}
+
+#chatBoard .msgRow {
+  background: #fff;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  padding: 0.4rem 1rem 1rem 0.4rem;
+  margin: 0 0 0.4rem 0;
+  overflow-wrap: break-word;
+  position: relative;
+}
+
+#chatBoard .msgRow .ts {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  font-size: 0.7rem;
+  color: #aaa;
+}
+
+span.userid {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #950c0c;
+  background: #eee;
+  padding: 0 3px;
+}
+
+.collapse-content {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  top: 0;
+  right: -20%;
+  z-index: 1000;
+  background-color: #f8f9fa;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  transition: right 0.3s ease-in-out;
+  background-color: #f7f7f7;
+  opacity: 1;
+  background-image: linear-gradient(30deg, #ececec 12%, transparent 12.5%, transparent 87%, #ececec 87.5%, #ececec), linear-gradient(150deg, #ececec 12%, transparent 12.5%, transparent 87%, #ececec 87.5%, #ececec), linear-gradient(30deg, #ececec 12%, transparent 12.5%, transparent 87%, #ececec 87.5%, #ececec), linear-gradient(150deg, #ececec 12%, transparent 12.5%, transparent 87%, #ececec 87.5%, #ececec), linear-gradient(60deg, #ececec77 25%, transparent 25.5%, transparent 75%, #ececec77 75%, #ececec77), linear-gradient(60deg, #ececec77 25%, transparent 25.5%, transparent 75%, #ececec77 75%, #ececec77);
+  background-size: 22px 39px;
+  background-position: 0 0, 0 0, 11px 19px, 11px 19px, 0 0, 11px 19px;
+  touch-action: none;
+  flex: 1;
+}
+
+.collapse-btn {
+  position:fixed;
+  top: 0;
+  right: 0;
+  z-index: 1001;
+}
+
+.collapse-content.show {
+  right: 0;
+  border-left: 2px solid black;
+}
+
+canvas {
+  display: block;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+/* style the color picker and brush size inputs */
+label {
+  margin: 10px;
+}
+input[type="range"] {
+  width: 100%;
+}
+
+#options {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: lightblue;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid black;
+}
+
+#dark-mode-toggle {
+  margin-left: auto;
+}
+body.dark-mode {
+  background-color: black;
+}
+body.dark-mode #options {
+  background-color: #333;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid white;
+  color: white;
+}
+body.dark-mode #drawing {
+  background-color: #222;
+}
+
+body {
+  overflow: hidden;
+}
