@@ -1,17 +1,9 @@
-# easychat
-A basic chat with socket.io
+# CanvasChat
+A basic canvas and chat with socket.io
 
-# live demo
-https://easychat.fly.dev/
-
-# deploy on heroku
-- create new app
-- login to heroku cli ("heroku login")
-- "heroku features:enable http-session-affinity -a NAME_OF_THE_APP"
-- deploy
-
-# todo
-- rooms
-- fix main chatboard height with js
-- add a splash screen with some instructions, and a form for nickname and room, for first time users
-- nickname storage and display in chat instead of random num
+# How to Run
+- clone repo
+- run "npm install express --save"
+- run "npm install socket.io --save"
+- run "npm start"
+- go to http://localhost:3001/
