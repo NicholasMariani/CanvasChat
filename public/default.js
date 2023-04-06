@@ -94,10 +94,14 @@ var color = "#000000";
 // get color picker and brush size elements
 var colorPicker = document.getElementById("color-picker");
 var brushSizeEl = document.getElementById("brush-size");
-// set event listeners
+// set event mouse listeners
 canvas.addEventListener("mousedown", startPainting);
 canvas.addEventListener("mouseup", stopPainting);
 canvas.addEventListener("mousemove", paint);
+// Set event listeners for touch events
+canvas.addEventListener("touchstart", startPainting);
+canvas.addEventListener("touchend", stopPainting);
+canvas.addEventListener("touchmove", paint);
 colorPicker.addEventListener("input", setColor);
 brushSizeEl.addEventListener("input", setBrushSize);
 

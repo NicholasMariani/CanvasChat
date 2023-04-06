@@ -61,7 +61,7 @@ span.userid {
 }
 
 .collapse-btn {
-  position:fixed;
+  position: fixed;
   top: 0;
   right: 0;
   z-index: 1001;
@@ -77,10 +77,12 @@ canvas {
   margin: 0 auto;
   border: 1px solid black;
 }
+
 /* style the color picker and brush size inputs */
 label {
   margin: 10px;
 }
+
 input[type="range"] {
   width: 100%;
 }
@@ -104,9 +106,11 @@ input[type="range"] {
 #dark-mode-toggle {
   margin-left: auto;
 }
+
 body.dark-mode {
   background-color: black;
 }
+
 body.dark-mode #options {
   background-color: #333;
   border-top: none;
@@ -115,10 +119,49 @@ body.dark-mode #options {
   border-bottom: 2px solid white;
   color: white;
 }
+
 body.dark-mode #drawing {
   background-color: #222;
 }
 
 body {
   overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  #chatBoard {
+    height: 60vh;
+  }
+
+  #chatBoard .msgRow {
+    padding: 0.4rem 0.4rem 1rem 0.4rem;
+  }
+
+  #chatBoard .msgRow .ts {
+    bottom: 4px;
+    right: 0;
+  }
+
+  .collapse-content {
+    width: 60%;
+    right: -60%;
+    opacity: 0.9;
+  }
+
+  .collapse-content.show {
+    right: 0;
+  }
+
+  #options {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  label {
+    margin: 10px 5px;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
 }
