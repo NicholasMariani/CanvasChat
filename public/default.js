@@ -98,10 +98,7 @@ var brushSizeEl = document.getElementById("brush-size");
 canvas.addEventListener("mousedown", startPainting);
 canvas.addEventListener("mouseup", stopPainting);
 canvas.addEventListener("mousemove", paint);
-// Set event listeners for touch events
-canvas.addEventListener("touchstart", startPainting);
-canvas.addEventListener("touchend", stopPainting);
-canvas.addEventListener("touchmove", paint);
+
 colorPicker.addEventListener("input", setColor);
 brushSizeEl.addEventListener("input", setBrushSize);
 
@@ -132,6 +129,34 @@ function paint(event) {
     y: event.clientY
   });
 }
+
+// Set event listeners for touch events
+canvas.addEventListener("touchstart", startPaintingTouch);
+canvas.addEventListener("touchend", stopPainting);
+canvas.addEventListener("touchmove", paintTouch);
+
+function startPaintingTouch(event) {
+  painting = true;
+  x = event.touches[0].clientX;
+  y = event.touches[0].clientY;
+}
+
+// paint
+function paintTouch(event) {
+  if (!painting) return;
+  ctx.strokeStyle = color;
+  ctx.lineWidth = brushSize;
+  ctx.lineCap = "round";
+  ctx.lineTo(event.touches[0].clientX, event.touches[0].clientY);
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(event.touches[0].clientX, event.touches[0].clientY);
+  socket.emit('drawClick', {
+    x: event.touches[0].clientX,
+    y: event.touches[0].clientY
+  });
+}
+
 // set color
 function setColor(event) {
   color = event.target.value;
