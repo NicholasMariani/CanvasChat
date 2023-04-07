@@ -11,9 +11,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/default.css" />
-  <style>
-
-  </style>
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -38,8 +35,12 @@
       Dark Mode:
       <input type="checkbox" id="dark-mode-toggle">
     </label>
+    <h2 id="username">Username</h2>
   </div>
-  <canvas id="drawing"></canvas>
+  </div>
+  <div id="canvas-container">
+    <canvas id="drawing"></canvas>
+  </div>
   <div class="collapse-content collapse">
     <header>
       <!-- Fixed navbar -->
@@ -78,6 +79,7 @@
   <div class="collapse-btn">
     <button type="button" class="btn btn-primary" onclick="toggleCollapse()">☰</button>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.4.0/fabric.min.js"></script>
   <script src="/socket.io/socket.io.js"></script>
   <script src="lib/jquery-1.11.1.js"></script>
   <script src="/default.js"></script>

@@ -22,7 +22,14 @@ io.on('connection', function (socket) {
     // https://stackoverflow.com/questions/31468473/how-to-get-socket-io-number-of-clients-in-room
 
     socket.on('drawClick', function (data) {
-        console.log('Server Canvas: x: ' + data.x + ' | y: ' + data.y);
+        console.log('Server Canvas: user: ' + data.user + ' x: ' + data.x + ' | y: ' + data.y, ' | color: ' + data.color + ' | brushSize: ' + data.brushSize);
+        socket.broadcast.emit('paint', {
+            data
+        });
+    });
+
+    socket.on('mouseUp', function (data) {
+        console.log('Server Canvas: event: ' + data.event);
         socket.broadcast.emit('paint', {
             data
         });
